@@ -1,0 +1,17 @@
+main:
+        addi R2, R0, 0xa
+l_0:
+        bne R0, R0, l_2
+l_1:
+        beq R0, R0, l_3
+        addi R7, R0, 0x347
+        syscall
+l_2:
+	addi R7, R0, 0x1337
+        # Should not reach here
+l_3:
+        addi R7, R0, 0xd00d
+        syscall
+        
+         
+        

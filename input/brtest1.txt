@@ -1,0 +1,27 @@
+main:
+        addi Rv0, R0, 0xa
+
+        # Set up some comparison values in registers
+        addi R3, R0, 1
+        addi R4, R0, -1
+
+        # Checksum register
+        addi R5, R0, 0x1234
+
+l_0:
+        add R5, R5, R31
+        beq   R0, R0, l_2
+l_1:
+        addi R5, R5, 7
+l_2:    
+        addi R5, R5, 9
+        bne R3, R4, l_3
+l_3:
+        # Should not get here
+        addi R5, R5, 1
+        syscall        
+l_4:    
+        addi R5, R5, 0xbeb0063d
+        syscall
+        
+        

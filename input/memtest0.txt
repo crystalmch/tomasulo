@@ -1,0 +1,45 @@
+main:
+        #;;  Set a base address
+        lui    R3, 0x1000
+
+        addi   R5, R0, 255
+        add    R6, R5, F5
+        add    R7, R6, R6
+        addi   R8, R7, 30000
+        
+        #;; Place a test pattern in memory
+        sd     F5, 0(R3)
+        sd     F6, 4(R3)
+        sd     F7, 8(R3)
+        sd     F8, 12(R3)
+
+        ld     F9,  0(R3)
+        ld     F10, 4(R3)
+        ld     F11, 8(R3)
+        ld     F12, 12(R3)
+
+        addi  R3, R3, 4
+        sd     F5, 0(R3)
+        sd     F6, 4(R3)
+        sd     F7, 8(R3)
+        sd     F8, 12(R3)
+
+        ld     F13,  -4(R3)
+        ld     F14,  0(R3)
+        ld     F15,  4(R3)
+        ld     F16,  8(R3)
+               
+        #;; Calculate a "checksum" for easy comparison
+        add.d    F17, F0, F9
+        add.d    F17, F17, F10
+        add.d    F17, F17, F11
+        add.d    F17, F17, F12
+        add.d    F17, F17, F13
+        add.d    F17, F17, F14
+        add.d    F17, F17, F15
+        add.d    F17, F17, F16
+        
+        #;;  Quit out 
+        addi R2, R0, 0xa
+        syscall
+        
