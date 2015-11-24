@@ -1,0 +1,7 @@
+#3) straight-line code where there are forwarding among load/store instructions;
+R2 = 2, R3 = 3
+MEM[5] = 20.0
+
+add R1, R2, R3	//R1 = 5
+ld F4, 0(R1)	//F4 = MEM[5] = 20.0
+sd F4, 12(R1)	//MEM[17] = F4 = 20.0

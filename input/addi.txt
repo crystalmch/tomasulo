@@ -1,6 +1,0 @@
-addi R2, R0, 10
-addi R8, R0, 5
-addi R9, R8, 300
-addi R10, R0, 500
-addi R11, R10, 34
-addi R11, R11, 45
