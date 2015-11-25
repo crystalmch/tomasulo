@@ -24,7 +24,7 @@
 
 #define ADD 	32 	//100000
 #define SUB 	34 	//100010
-#define SPECILE 0	//000000
+#define SPECIAL 0	//000000
 /***************************************************************/
 /*                                                             */
 /* Definition: memory allocation                               */
@@ -45,38 +45,39 @@
 /***************************************************************/
 /*                                                             */
 /* Definition: integer adder specified settings                */
+/* Include: addi, add, sub, load & store address calculation   */
 /*                                                             */
 /***************************************************************/
-#define NUM_RS_INA 2		//reservation station entry number
-#define EX_CYCLE_INA 1 		//cycles in ex
-#define MEM_CYCLE_INA 1		//cycles in mem
-#define ALU_INA 1			//alu
+#define NUM_RS_ADD 2		//reservation station entry number
+#define EX_CYCLE_ADD 1 		//cycles in ex
+#define MEM_CYCLE_ADD 1		//cycles in mem
+#define ALU_ADD 1			//alu
 /***************************************************************/
 /*                                                             */
 /* Definition: fp adder specified settings	                   */
+/* Include: add.d, sub.d                                       */
 /*                                                             */
 /***************************************************************/
-#define NUM_RS_FPA 3
-#define EX_CYCLE_FPA 3
-#define MEM_CYCLE_FPA 1
-#define ALU_FPA 1
+#define NUM_RS_DADD 3
+#define EX_CYCLE_DADD 3
+#define ALU_DADD 1
 /***************************************************************/
 /*                                                             */
 /* Definition: fp multiplier specified settings	               */
+/* Include: mult.d                                             */
 /*                                                             */
 /***************************************************************/
-#define NUM_RS_FPM 2
-#define EX_CYCLE_FPM 20
-#define MEM_CYCLE_FPM 1
-#define ALU_FPM 1
+#define NUM_RS_DMULT 2
+#define EX_CYCLE_DMULT 20
+#define ALU_DMULT 1
 /***************************************************************/
 /*                                                             */
 /* Definition: load & store specified settings	               */
 /*                                                             */
 /***************************************************************/
-#define RS_ENT_LS 3
-#define EX_CYCLE_LS 1
-#define MEM_CYCLE_LS 4
-#define ALU_LS 1
+#define NUM_RS_LD 3
+#define EX_CYCLE_LD 1
+#define MEM_CYCLE_LD 4
+#define ALU_LD 1
 
 #endif
